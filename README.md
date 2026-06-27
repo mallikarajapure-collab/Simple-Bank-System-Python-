@@ -1,33 +1,37 @@
-# Simple-Bank-System-Python-
-A simple Bank Management System built using Python. This project allows users to check balance, deposit money, withdraw money, and exit the system using a menu-driven interface. It demonstrates basic programming concepts like loops, conditional statements, and user input handling.
-# 🏦 Python Bank Management System
+balance = 0
 
-A simple console-based Bank Management System built using Python.  
-It allows users to perform basic banking operations like deposit, withdraw, and check balance.
+while True:
+    print("\n===== BANK MENU =====")
+    print("1. Check Balance")
+    print("2. Deposit Money")
+    print("3. Withdraw Money")
+    print("4. Exit")
 
----
+    choice = input("Enter your choice: ")
 
-## 🚀 Features
+    if choice == "1":
+        print("💰 Your balance is:", balance)
 
-- 💰 Check account balance  
-- ➕ Deposit money  
-- ➖ Withdraw money with balance check  
-- 🔁 Continuous menu system using loops  
-- 🚪 Exit option to close the system  
+    elif choice == "2":
+        amount = int(input("Enter amount to deposit: "))
+        if amount > 0:
+            balance += amount
+            print("✅ Money deposited successfully!")
+        else:
+            print("❌ Invalid amount")
 
----
+    elif choice == "3":
+        amount = int(input("Enter amount to withdraw: "))
+        if amount <= balance:
+            balance -= amount
+            print("✅ Withdrawal successful!")
+        else:
+            print("❌ Insufficient balance")
 
-## 🧠 Concepts Used
+    elif choice == "4":
+        print("👋 Thank you for using our bank!")
+        break
 
-- Variables  
-- Input / Output  
-- While loop  
-- If-Else conditions  
-- Basic arithmetic operations  
-
----
-
-## 💻 How to Run
-
-```bash
-python bank.py
+    else:
+        print("❌ Invalid choice! Try again")
+        
